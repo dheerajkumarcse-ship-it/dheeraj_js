@@ -13,12 +13,26 @@
 <script>
     function addLanguage(langName){
         const li=document.createElement('li');
-        li.style.color="orange"
-        li.innerHTML=`${langName}`;
+        li.appendChild(document.createTextNode(langName))
         document.querySelector('.language').appendChild(li);
     }
     addLanguage("python")
     addLanguage("ruby")
+
+    //Edit
+
+    const secondChild=document.querySelector("li:nth-child(2)")
+    const newli=document.createElement('li')
+    newli.textContent="MOJO";
+    secondChild.replaceWith(newli)
+
+    const firstChild=document.querySelector("li:first-child");
+    firstChild.outerHTML='<li>Dheeraj</li>'
+    const lastChild=document.querySelector("li:last-child");
+  lastChild.remove();
+
+
+
 
 </script>
 </html>
