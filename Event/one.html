@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventClasses</title>
+</head>
+<body style=" background-color:#414141"; color:#fff>
+    <ul id="images">
+        <li><img id="image1" width="200px" height="200px" src="https://www.pexels.com/photo/black-and-white-photography-of-riomaggiore-buildings-38541330/"  alt="Image 1"></li>
+        <li><img id="image2" width="200px" height="200px" src="https://www.pexels.com/photo/black-and-white-photography-of-riomaggiore-buildings-38541330/"  alt="Image 2"></li>
+        <li><img id="image3" width="200px" height="200px" src="https://www.pexels.com/photo/black-and-white-photography-of-riomaggiore-buildings-38541330/"  alt="Image 3"></li>
+        <li><img id="image4" width="200px" height="200px" src="https://www.pexels.com/photo/black-and-white-photography-of-riomaggiore-buildings-38541330/"  alt="Image 4"></li>
+        <li><img id="image5" width="200px" height="200px" src="https://www.pexels.com/photo/black-and-white-photography-of-riomaggiore-buildings-38541330/"  alt="Image 5"></li>
+        <li><a href="https://google.com" id="google">Google</a></li>
+    </ul>
+    
+</body>
+<script>
+    // document.getElementById("images").addEventListener("click", function(e) {
+    //     console.log("Cliked inside ul")
+    // },false);
+    // document.getElementById("image2").addEventListener("click", function(e) {
+    //     console.log("Cliked inside image2")
+    //     e.stopPropagation()
+    // },false);
+    // document.getElementById(".google").addEventListener("click", function(e) {
+    //     console.log("Cliked inside image2")
+    //     e.preventDefault();
+        
+    // },false);
+    document.querySelector("#images").addEventListener("click", function(e) {
+        if(e.target.tagName === "IMG") {
+            const li = e.target.parentNode;
+        li.remove();
+            
+        }
+
+        
+    },false);
+
+</script>
+    
+</html>
