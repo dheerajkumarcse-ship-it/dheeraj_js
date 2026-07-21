@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colorChnage</title>
+</head>
+<body style="background-color: #515151; color:beige">
+    <h1>Srat should change the Background color every second</h1>
+    <button id="start" style="background-color: rgb(21, 97, 93); color:rgb(255, 255, 255); padding:10px">Start</button>
+    <button id="stop" style="background-color: rgb(21, 97, 93); color:rgb(255, 255, 255); padding:10px">Stop</button>
+    
+</body>
+<script>
+    let intervalid;
+    const randomColor= function(){
+        
+        const hex="0123456789ABCDEF";
+        
+        let color="#";
+        
+        for(i=0;i<6;i++){
+            
+            color=color+hex[Math.floor(Math.random()*16)];
+            
+
+        }
+        return color;
+    };
+
+    const BGchange= function(){
+        if(intervalid==null){
+        intervalid=setInterval(changeBGcolor,1000);
+        }
+        function changeBGcolor ()
+        {document.body.style.backgroundColor=randomColor();}
+        
+    }
+
+    
+
+    const BGstop=function(){
+
+        clearInterval(intervalid)
+        intervalid=null;
+    }
+
+   
+
+  document.querySelector("#start").addEventListener('click',BGchange)
+
+  document.querySelector("#stop").addEventListener('click',BGstop)
+  
+
+</script>
+</html>
