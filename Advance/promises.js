@@ -33,7 +33,32 @@
 
 // })
 
-const promiseFour= new Promise(function(resolve,reject){
+// const promiseFour= new Promise(function(resolve,reject){
+
+//     setTimeout(function(){
+
+//         let error=true;
+//         if(!error)
+//         {resolve({username:"dheeraj", password:"123"})}
+//         else{
+//             reject("Error! something went wrong")
+//         }
+//     },1000)
+// })
+// promiseFour.then((user)=>{
+//     console.log(user);
+//     return user.username
+// }).then((username)=>{
+// console.log(username)
+    
+// }).catch(function(error){
+//     console.log(error)
+// }).finally(()=>{
+//     console.log("the promise is either resove or refected")
+// })
+
+
+const promiseFive=new Promise(function(resolve,reject){
 
     setTimeout(function(){
 
@@ -45,14 +70,15 @@ const promiseFour= new Promise(function(resolve,reject){
         }
     },1000)
 })
-promiseFour.then((user)=>{
-    console.log(user);
-    return user.username
-}).then((username)=>{
-console.log(username)
+async function consumePromiseFive(){
+    try{
+        const response= await promiseFive;
+        console.log(response)
+    }
+    catch(error)
+    {
+        console.log(error)
+    }
     
-}).catch(function(error){
-    console.log(error)
-}).finally(()=>{
-    console.log("the promise is either resove or refected")
-})
+}
+consumePromiseFive();
