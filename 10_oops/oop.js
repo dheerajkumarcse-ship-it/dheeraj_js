@@ -14,9 +14,9 @@ function User(username, loginCount, isLoggedIn){
     this.username=username;
     this.loginCount=loginCount;
     this.isLoggedIn=isLoggedIn;
-    return this;
+    // return this;
 }
 const user1=new User("dheeraj", 8, true);
 const user2=new User("neeraj", 9, false);
-console.log(user1)
-console.log(user2)
+console.table(user1)
+console.log(user2jjjj)
